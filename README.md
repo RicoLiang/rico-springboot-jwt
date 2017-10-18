@@ -16,7 +16,7 @@
 [Web安全通讯之JWT的Java实现](http://blog.csdn.net/wangcantian/article/details/74330458)<br/>
 jwt官网(https://jwt.io/)<br/>
 [jwt(json-web-token)在rest中的实现--jersey](http://blog.csdn.net/li563868273/article/details/50277359)<br/>
-[在哪里存储您的JWT - Cookie与HTML5 Web存储]https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage
+[在哪里存储您的JWT - Cookie与HTML5 Web存储](https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage)<br/>
 [三大消息摘要算法总结](http://www.cnblogs.com/java-zhao/p/5085386.html)<br/>
 
 [sonar](http://www.uml.org.cn/jchgj/201307251.asp)<br/>
