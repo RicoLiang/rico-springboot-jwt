@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+        <Property name="FILE_PATH">${sys:user.home}/logs/rico-springboot-jwt</Property>     
+		<Property name="CONSOLE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} - [%-5p] %m%n</Property>
+		<Property name="FILE_PATTERN">%d{yyyy-MM-dd HH:mm:ss} [ %t:%r ] - [%-5p] - %m%n</Property>
+	</Properties>
+	<Appenders>
+		<Console name="console" target="system_out">
+			<PatternLayout pattern="${CONSOLE_PATTERN}" />
+		</Console>
+		<RollingFile name="rollingFile" fileName="${FILE_PATH}/log.log" filePattern="${FILE_PATH}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="${FILE_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+	</Appenders>
+	<Loggers>
+		<logger name="org.springframework" level="WARN" />
+		<logger name="org.mybatis" level="WARN"></logger>
+		<logger name="java.util.logging" level="WARN" />
+		<root level="INFO">
+			<appenderref ref="console" />
+			<appenderref ref="rollingFile" />
+		</root>
+	</Loggers>
+</Configuration>
